@@ -3,10 +3,8 @@ Application to solve quadratic equations
 
 ## Setup
 
-install: 
-```bash
-npm install
-```
+Install project.
+
 run app: 
 ```bash
 npm start <filepath>
