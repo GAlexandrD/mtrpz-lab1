@@ -1,16 +1,31 @@
+import { inputFile } from './file-input.js';
 import { askValues } from './interactive.js';
 import { solveEquation } from './quadratic-equation.js';
 
+const filePath = process.argv[2];
+
 const log = (...args) => console.log(...args);
 
-const input = async () => {
+if (filePath) {
+  readFile(filePath);
+} else {
+  input();
+}
+
+async function input() {
   const { a, b, c } = await askValues();
-  log('equation: (%f) x^2 + (%f) x + %f', a, b, c);
   solve(a, b, c);
   process.exit(0);
-};
+}
+
+async function readFile(path) {
+  const { a, b, c } = await inputFile(path);
+  solve(a, b, c);
+  process.exit(1);
+}
 
 function solve(a, b, c) {
+  log('equation: (%f) x^2 + (%f) x + %f', a, b, c);
   try {
     const [x1, x2] = solveEquation(a, b, c);
     if (x2 === undefined) {
@@ -22,5 +37,3 @@ function solve(a, b, c) {
     log(error.message);
   }
 }
-
-input();

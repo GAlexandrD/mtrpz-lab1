@@ -2,7 +2,7 @@ export function solveEquation(a, b, c) {
   const isValidParams = validateValues(a, b, c);
   if(!isValidParams) throw new Error('invalid quadratic equation');
   const D = b * b - 4 * a * c;
-  if (D < 0) throw new Error('D < 0, equation doesn`t have roots');
+  if (D < 0) throw new Error('D < 0, there are no roots in the equation');
   const x1 = (-b + Math.sqrt(D)) / (2 * a);
   const x2 = (-b - Math.sqrt(D)) / (2 * a);
   if (x1 === x2) return [x1];
