@@ -6,11 +6,11 @@ const log = (...args) => console.log(...args);
 const input = async () => {
   const { a, b, c } = await askValues();
   log('equation: (%f) x^2 + (%f) x + %f', a, b, c);
-  solveEquation(a, b, c);
+  solve(a, b, c);
   process.exit(0);
 };
 
-function solveEquation(a, b, c) {
+function solve(a, b, c) {
   try {
     const [x1, x2] = solveEquation(a, b, c);
     if (x2 === undefined) {
