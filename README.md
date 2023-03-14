@@ -2,10 +2,11 @@
 Application to solve quadratic equations
 
 ## Setup
+You need [NodeJs](https://nodejs.org/en/download/) to run this project
 
-Install project.
+1. Clone repository.
 
-run app: 
+2. run app: 
 ```bash
 npm start <filepath>
 ```
